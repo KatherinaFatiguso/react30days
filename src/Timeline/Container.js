@@ -8,7 +8,8 @@ class App extends Component {
     return (
         <div className="notificationsFrame">
           <div className="panel">
-            <Header />
+            <Header title="Timeline" />
+            {/*Passing title as a prop for attribute on <Header /> */}
             <Content />
           </div>
         </div>
