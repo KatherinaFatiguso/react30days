@@ -2,18 +2,36 @@ import React, { Component } from 'react';
 
 class Content extends Component {
   render() {
+    const {activities} = this.props; // ES6 destructuring
     return (
       <div className="content">
-        <div className="line" />
-        <div className="item">
-          <div className="avatar">
-            <img alt="doug" src="http://www.croop.cl/UI/twitter/images/doug.jpg" />
-          </div>
+        <div className="line"></div>
 
-          <span className="time">An hour ago</span>
-          <p>Ate lunch</p>
-        </div>
-      </div>
+      {/*Timeline item*/}
+      {activities.map((activity) => {
+        return (
+          <div className="item">
+            <div className="avatar">
+              <img
+                alt={activity.text}
+                src={activity.user.avatar}
+              />
+            </div>
+            <div className="name">
+              {activity.user.name}
+            </div>
+
+
+            <span className="time">{activity.timestamp}</span>
+            <p>{activity.text}</p>
+            <div className="commentCount">
+              {activity.comments.length}
+            </div>
+          </div>
+        );
+      })}
+
+    </div>
     );
   }
 }
