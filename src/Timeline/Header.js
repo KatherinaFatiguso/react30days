@@ -22,4 +22,7 @@ class Header extends Component {
   }
 }
 
+Header.defaultProps = {
+  title: 'Github activity'
+}
 export default Header;

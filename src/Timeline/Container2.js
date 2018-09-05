@@ -25,8 +25,11 @@ class Container extends Component {
     return(
       <div className='notificationsFrame'>
         <div className='panel'>
-          <Header title='Github activity' />
-          {/*Refreshing is the component's state*/}
+          <Header />
+          {/*Notice in Header component we don't need to pass the title, because we already*/}
+          {/*declared the defaultProps for Header component.*/}
+
+          {/*refreshing is the component's state*/}
           <Content
             onComponentRefresh={this.onComponentRefresh.bind(this)}
             requestRefresh={refreshing}

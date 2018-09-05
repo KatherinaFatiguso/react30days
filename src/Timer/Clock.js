@@ -1,7 +1,8 @@
 import React from 'react';
 import './Clock.css';
+import PropTypes from 'prop-types';
 
-class Clock extends React.Component{
+class Clock extends React.Component {
   constructor(props){
     super(props);
     this.state = this.getTime();
@@ -27,6 +28,14 @@ class Clock extends React.Component{
       ampm: currentTime.getHours() >= 12 ? 'pm' : 'am',
     }
   }
+  // When your clock is going to be unmounted, we'll want to clear
+  // the timeout we create in the setTimer() function on the component.
+  componentWillUnmount() {
+    if(this.timeout) {
+      clearTimeout(this.timeout);
+    }
+  }
+
   render() {
     const {hours, minutes, seconds, ampm} = this.state;
     return (
@@ -44,3 +53,13 @@ class Clock extends React.Component{
 
 }
 export default Clock;
+
+Clock.propTypes = {
+  basicObject: PropTypes.object,
+  numbers: PropTypes.objectOf(PropTypes.numbers),
+  // messages: PropTypes.instanceOf(Message),
+  contactList: PropTypes.shape({
+    name: PropTypes.string,
+    phone: PropTypes.string,
+  }),
+}
