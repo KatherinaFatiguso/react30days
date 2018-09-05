@@ -3,7 +3,7 @@ import '../components/timeline.css';
 import Header from './Header.js';
 import Content from './Content.js';
 
-class App extends Component {
+class Container extends Component {
   render() {
     const activities = [
       {
@@ -40,4 +40,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Container;

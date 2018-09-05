@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Container from './Timeline/Container';
+// import Container from './Timeline/Container'; // Lesson 06
+import Container from './Timeline/Container2'; // Lesson 07
 import Timer from './Timer/Clock';
 
 export const load = () => {

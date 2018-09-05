@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import App from "../Timeline/Container";
+import React from 'react';
+import './Clock.css';
 
 class Clock extends React.Component{
   constructor(props){
@@ -13,9 +13,9 @@ class Clock extends React.Component{
   }
 
   updateClock(){
-    // const currentTime = new Date();
-    // this.setState({currentTime: currentTime}, this.setTimer);
-    this.setState(this.getTime, this.setTimer);
+    const currentTime = new Date();
+    this.setState({currentTime: currentTime}, this.setTimer);
+    // this.setState(this.getTime, this.setTimer);
   }
 
   getTime(){
